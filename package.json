@@ -28,7 +28,8 @@
     "clean:dist": "npm run rimraf -- dist",
     "clean:coverage": "npm run rimraf -- coverage",
     "docs:deploy": "wintersmith build -C docs && gh-pages -d docs/build",
-    "docs:serve": "wintersmith preview -C docs"
+    "docs:serve": "wintersmith preview -C docs",
+    "postinstall": "npm run clean:dist && webpack --config config/webpack.prod.js --progress --profile --colors --display-error-details --display-cached --bail"
   },
   "private": true,
   "dependencies": {
