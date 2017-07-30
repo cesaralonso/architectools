@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from './user.service';
+import { ObrasService } from './obras.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { UserAddModal } from './user-add-modal/user-add-modal.component';
-import { UserEditModal } from './user-edit-modal/user-edit-modal.component';
+import { ObrasAddModal } from './obras-add-modal/obras-add-modal.component';
+import { ObrasEditModal } from './obras-edit-modal/obras-edit-modal.component';
 
 @Component({
-  selector: 'usuarios-table',
-  templateUrl: './usuarios-table.html',
-  styleUrls: ['./usuarios-table.scss']
+  selector: 'obras-table',
+  templateUrl: './obras-table.html',
+  styleUrls: ['./obras-table.scss']
 })
-export class UsuariosTable implements OnInit {
+export class ObrasTable implements OnInit {
 
     data;
     filterQuery = "";
@@ -17,21 +17,21 @@ export class UsuariosTable implements OnInit {
     sortBy = "nombre";
     sortOrder = "asc";
 
-    constructor(private service: UserService, private modalService: NgbModal) {
+    constructor(private service: ObrasService, private modalService: NgbModal) {
     }
 
     toInt(num: string) {
         return +num;
     }
 
-    addUserModalShow() {
-      const activeModal = this.modalService.open(UserAddModal, { size: 'lg' });
-      activeModal.componentInstance.modalHeader = 'Agregar Usuario';
+    addObrasModalShow() {
+      const activeModal = this.modalService.open(ObrasAddModal, { size: 'lg' });
+      activeModal.componentInstance.modalHeader = 'Agregar Obra';
     }
 
-    editUserModalShow(id: any) {
-      const activeModal = this.modalService.open(UserEditModal, { size: 'lg' });
-      activeModal.componentInstance.modalHeader = 'Editar Usuario';
+    editObrasModalShow(id: any) {
+      const activeModal = this.modalService.open(ObrasEditModal, { size: 'lg' });
+      activeModal.componentInstance.modalHeader = 'Editar Obra';
       activeModal.componentInstance.id = id;
       // AQUÍ ES DONDE SE VA A CARGAR LOS DATOS DEL USUARIO Y AGREGARSE POR MEDIO DEL COMPONENT INSTANCE
 
@@ -47,19 +47,19 @@ export class UsuariosTable implements OnInit {
 
 
     ngOnInit() {
-        this.getAllUsers();
+        this.getAllObrass();
     }
     
-    private getAllUsers(): void {
+    private getAllObrass(): void {
 
-      this.service.getAllUsers().then((data) => {
+      this.service.getAllObrass().then((data) => {
         this.data = data;
       });
 
 
       /*
         this.service
-            .getAllUsers()
+            .getAllObrass()
             .subscribe(
                 (data:any[]) => console.log(data),
                 error => console.log(error),

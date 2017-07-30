@@ -1,6 +1,6 @@
-import { UserService } from './../user.service';
-import { Modals } from './../../../../../../ui/components/modals/modals.component';
-import { User } from './../user.interface';
+import { ObrasService } from './../obras.service';
+import { Modals } from './../../../../ui/components/modals/modals.component';
+import { Obras } from './../obras.interface';
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
@@ -9,11 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'edit-service-modal',
-  styleUrls: [('./user-edit-modal.component.scss')],
-  templateUrl: './user-edit-modal.component.html'
+  styleUrls: [('./obras-edit-modal.component.scss')],
+  templateUrl: './obras-edit-modal.component.html'
 })
 
-export class UserEditModal implements OnInit {
+export class ObrasEditModal implements OnInit {
 
   form: FormGroup;
   submitted: boolean = false;
@@ -37,7 +37,7 @@ export class UserEditModal implements OnInit {
 
   private id: any;
 
-  constructor(private service: UserService,
+  constructor(private service: ObrasService,
               private activeModal: NgbActiveModal,
               fb: FormBuilder,
               private toastrService: ToastrService) {
@@ -85,17 +85,17 @@ export class UserEditModal implements OnInit {
     this.activeModal.close();
   }
 
-  onSubmit(values: User): void {
+  onSubmit(values: Obras): void {
     this.submitted = true;
     if (this.form.valid) {
       this.service
-        .EditUser(values)
+        .EditObras(values)
         .subscribe(
             (data: any) => this.showToast(data, values));
     }
   }
 
-  private showToast(data: any, values: User) {
+  private showToast(data: any, values: Obras) {
     if (data.idRespuesta === 0) {
 
       this.toastrService.success(data.mensajeRespuesta);

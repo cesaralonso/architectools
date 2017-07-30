@@ -1,4 +1,4 @@
-export interface User {
+export interface Obras {
     nickname: string;
     usuarioauth: string;
     claveauth: string;

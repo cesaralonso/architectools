@@ -1,6 +1,6 @@
-import { UserService } from './../user.service';
-import { Modals } from './../../../../../../ui/components/modals/modals.component';
-import { User } from './../user.interface';
+import { ObrasService } from './../obras.service';
+import { Modals } from './../../../../ui/components/modals/modals.component';
+import { Obras } from './../obras.interface';
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
@@ -9,11 +9,11 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'add-service-modal',
-  styleUrls: [('./user-add-modal.component.scss')],
-  templateUrl: './user-add-modal.component.html'
+  styleUrls: [('./obras-add-modal.component.scss')],
+  templateUrl: './obras-add-modal.component.html'
 })
 
-export class UserAddModal implements OnInit {
+export class ObrasAddModal implements OnInit {
 
   form: FormGroup;
   submitted: boolean = false;
@@ -36,7 +36,7 @@ export class UserAddModal implements OnInit {
   clave: AbstractControl;
 
 
-  constructor(private service: UserService,
+  constructor(private service: ObrasService,
               private activeModal: NgbActiveModal,
               fb: FormBuilder,
               private toastrService: ToastrService) {
@@ -84,17 +84,17 @@ export class UserAddModal implements OnInit {
     this.activeModal.close();
   }
 
-  onSubmit(values: User): void {
+  onSubmit(values: Obras): void {
     this.submitted = true;
     if (this.form.valid) {
       this.service
-        .AddUser(values)
+        .AddObras(values)
         .subscribe(
             (data: any) => this.showToast(data, values));
     }
   }
 
-  private showToast(data: any, values: User) {
+  private showToast(data: any, values: Obras) {
     if (data.idRespuesta === 0) {
 
       this.toastrService.success(data.mensajeRespuesta);

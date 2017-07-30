@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppTranslationModule } from '../../app.translation.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
-import { DataTableModule } from "angular2-datatable";
+import { DataTableModule } from 'angular2-datatable';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DefaultModal } from './components/dataTables/default-modal/default-modal.component';
