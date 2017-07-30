@@ -1,13 +1,17 @@
-import { Routes, RouterModule }  from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
 import { Obras } from './obras.component';
-import { ModuleWithProviders } from '@angular/core';
+import { UsuariosTable } from './components/obras-table/obras-table.component';
 
 // noinspection TypeScriptValidateTypes
 export const routes: Routes = [
   {
     path: '',
-    component: Obras
+    component: Obras,
+    children: [
+      { path: 'obras-table', component: UsuariosTable }
+    ]
   }
 ];
 

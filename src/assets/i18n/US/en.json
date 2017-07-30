@@ -12,8 +12,8 @@
   "login": {
     "title": "Accesa",
     "signup_link": "Registrate si eres nuevo!",
-    "email": "Email",
-    "password": "Password",
+    "usuario": "Usuario",
+    "clave": "Clave",
     "sign_in": "Accesar",
     "forgot_password": "¿Olvidaste tu password?"
   },
@@ -22,6 +22,14 @@
     "email": "Email",
     "forgot": "Enviar email",
     "signin_link": "Accesa"
+  },
+  "change-password": {
+    "title": "Cambia tu contraseña",
+    "change-password": "Cambiar",
+    "old": "Contraseña anterior",
+    "new": "Nueva contraseña",
+    "repeat": "Repite tu password",
+    "no_match": "Passwords no coinciden"
   },
   "general": {
     "akveo": "Akveo",
@@ -72,10 +80,10 @@
       "materiales": "Materiales",
       "reportes": "Reportes",
       "presupuesto": "Presupuesto",
+      "admin": "Admin",
       "usuarios": "Usuarios",
       "grupos": "Grupos",
       "permisos": "Permisos",
-      "categorias": "Categorias",
       "bitacora": "Bitácora"
     },
     "created_with": "Created with"

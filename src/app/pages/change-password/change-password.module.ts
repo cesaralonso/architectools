@@ -1,3 +1,4 @@
+import { ChangePasswordService } from './change-password.service';
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { AppTranslationModule } from '../../app.translation.module';
@@ -19,6 +20,9 @@ import { routing }       from './change-password.routing';
   ],
   declarations: [
     ChangePassword
+  ],
+  providers: [
+    ChangePasswordService
   ]
 })
 export class ChangePasswordModule {}

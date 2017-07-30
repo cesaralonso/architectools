@@ -99,130 +99,67 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'usuarios',
+        path: 'admin',
         data: {
           menu: {
-            title: 'general.menu.usuarios',
+            title: 'general.menu.admin',
             icon: 'ion-person-stalker',
             selected: false,
             expanded: false,
             order: 0
           }
-        }
-      },
-      {
-        path: 'grupos',
-        data: {
-          menu: {
-            title: 'general.menu.grupos',
-            icon: 'ion-ios-people',
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
-
-      {
-        path: 'permisos',
-        data: {
-          menu: {
-            title: 'general.menu.permisos',
-            icon: 'ion-ribbon-b',
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
-      {
-        path: 'bitacora',
-        data: {
-          menu: {
-            title: 'general.menu.bitacora',
-            icon: 'ion-ios-list',
-            selected: false,
-            expanded: false,
-            order: 0
-          }
-        }
-      },
-      {
-        path: 'forms',
-        data: {
-          menu: {
-            title: 'general.menu.form_elements',
-            icon: 'ion-compose',
-            selected: false,
-            expanded: false,
-            order: 400,
-          }
         },
         children: [
           {
-            path: 'inputs',
+            path: 'users',
             data: {
               menu: {
-                title: 'general.menu.form_inputs',
+                title: 'general.menu.usuarios',
+                icon: 'ion-person-stalker',
+                selected: false,
+                expanded: false,
+                order: 0
               }
             }
           },
           {
-            path: 'layouts',
+            path: 'grupos',
             data: {
               menu: {
-                title: 'general.menu.form_layouts',
+                title: 'general.menu.grupos',
+                icon: 'ion-ios-people',
+                selected: false,
+                expanded: false,
+                order: 1
+              }
+            }
+          },
+          {
+            path: 'permisos',
+            data: {
+              menu: {
+                title: 'general.menu.permisos',
+                icon: 'ion-ribbon-b',
+                selected: false,
+                expanded: false,
+                order: 2
+              }
+            }
+          },
+          {
+            path: 'bitacora',
+            data: {
+              menu: {
+                title: 'general.menu.bitacora',
+                icon: 'ion-ios-list',
+                selected: false,
+                expanded: false,
+                order: 3
               }
             }
           }
         ]
-      },
-      {
-        path: 'tables',
-        data: {
-          menu: {
-            title: 'general.menu.tables',
-            icon: 'ion-grid',
-            selected: false,
-            expanded: false,
-            order: 500,
-          }
-        },
-        children: [
-          {
-            path: 'basictables',
-            data: {
-              menu: {
-                title: 'general.menu.basic_tables',
-              }
-            }
-          },
-          {
-            path: 'smarttables',
-            data: {
-              menu: {
-                title: 'general.menu.smart_tables',
-              }
-            }
-          },
-          {
-            path: 'datatables',
-            data: {
-              menu: {
-                title: 'Data Tables',
-              }
-            }
-          },
-           {
-             path: 'hottables',
-             data: {
-               menu: {
-                 title: 'Hot Tables',
-               }
-             }
-           }
-        ]
-      },
+      }
     ]
   }
 ];

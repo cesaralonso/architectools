@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
  * Platform and Environment providers/directives/pipes
  */
 import { routing } from './app.routing';
+// Configuración
+import { Configuration } from './app.constants';
 
 // App is our top level component
 import { App } from './app.component';
@@ -17,11 +19,16 @@ import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+import { LocalStorageModule } from 'angular-2-local-storage';
 
 // Application wide providers
 const APP_PROVIDERS = [
   AppState,
-  GlobalState
+  GlobalState,
+  Configuration
 ];
 
 export type StoreType = {
@@ -47,7 +54,13 @@ export type StoreType = {
     NgaModule.forRoot(),
     NgbModule.forRoot(),
     PagesModule,
-    routing
+    routing,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added,
+    LocalStorageModule.withConfig({
+        prefix: 'architectools',
+        storageType: 'localStorage'
+    })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     APP_PROVIDERS

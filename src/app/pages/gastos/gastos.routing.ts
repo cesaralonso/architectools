@@ -1,13 +1,17 @@
 import { Routes, RouterModule }  from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
 import { Gastos } from './gastos.component';
-import { ModuleWithProviders } from '@angular/core';
+import { DataTables } from './components/dataTables/dataTables.component';
 
 // noinspection TypeScriptValidateTypes
 export const routes: Routes = [
   {
     path: '',
-    component: Gastos
+    component: Gastos,
+    children: [
+      { path: 'datatables', component: DataTables }
+    ]
   }
 ];
 

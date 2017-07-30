@@ -6,10 +6,11 @@ import { NgaModule } from '../../theme/nga.module';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
-import { Obras } from './obras.component';
-import { ObrasService } from './obras.service';
+import { Gastos } from './gastos.component';
+import { GastosService } from './gastos.service';
 
-import { routing }       from './obras.routing';
+import { routing }       from './gastos.routing';
+import { HoverTable } from './components/hoverTable';
 
 
 @NgModule({
@@ -20,15 +21,16 @@ import { routing }       from './obras.routing';
     FormsModule,
     NgaModule,
     routing,
-    Ng2SmartTableModule,
+    Ng2SmartTableModule
   ],
   declarations: [
-    Obras
+    Gastos,
+    HoverTable
   ],  
   providers: [
-    ObrasService
+    GastosService
   ]
 })
-export class ObrasModule {}
+export class GastosModule {}
 
 

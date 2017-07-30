@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { AppTranslationModule } from '../../app.translation.module';
@@ -19,6 +20,9 @@ import { routing }       from './login.routing';
   ],
   declarations: [
     Login
+  ],
+  providers: [
+    LoginService
   ]
 })
 export class LoginModule {}
