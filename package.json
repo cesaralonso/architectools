@@ -28,8 +28,7 @@
     "clean:dist": "npm run rimraf -- dist",
     "clean:coverage": "npm run rimraf -- coverage",
     "docs:deploy": "wintersmith build -C docs && gh-pages -d docs/build",
-    "docs:serve": "wintersmith preview -C docs",
-    "postinstall": "npm run rimraf -- dist && ng build --prod"
+    "docs:serve": "wintersmith preview -C docs"
   },
   "private": true,
   "dependencies": {
