@@ -9,6 +9,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class DefaultModal implements OnInit {
 
+  isNota: boolean;
+
   constructor(private activeModal: NgbActiveModal) {
   }
 

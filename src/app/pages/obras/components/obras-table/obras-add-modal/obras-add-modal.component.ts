@@ -15,6 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 
 export class ObrasAddModal implements OnInit {
 
+  modalHeader: string;
+
   form: FormGroup;
   submitted: boolean = false;
 

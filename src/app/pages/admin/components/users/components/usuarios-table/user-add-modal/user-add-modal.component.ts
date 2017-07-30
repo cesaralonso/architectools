@@ -15,6 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 
 export class UserAddModal implements OnInit {
 
+  modalHeader: string;
+
   form: FormGroup;
   submitted: boolean = false;
 

@@ -15,6 +15,10 @@ import { ToastrService } from 'ngx-toastr';
 
 export class ObrasEditModal implements OnInit {
 
+  
+  modalHeader: string;
+  id: string;
+
   form: FormGroup;
   submitted: boolean = false;
 
@@ -35,7 +39,6 @@ export class ObrasEditModal implements OnInit {
   fechainicial: AbstractControl;
   clave: AbstractControl;
 
-  private id: any;
 
   constructor(private service: ObrasService,
               private activeModal: NgbActiveModal,
